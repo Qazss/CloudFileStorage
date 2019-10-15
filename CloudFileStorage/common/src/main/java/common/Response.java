@@ -1,0 +1,8 @@
+package common;
+
+public enum Response {
+    AUTHORIZATION_SUCCESS,
+    AUTHORIZATION_FAILED,
+    REGISTRATION_SUCCESS,
+    REGISTRATION_FAILED;
+}

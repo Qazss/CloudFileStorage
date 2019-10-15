@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<BorderPane prefHeight="237.0" prefWidth="384.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="client.authWindow.AuthController">
+    <stylesheets><URL value="@/CSS/authWindow.css" /></stylesheets>
+
+    <top>
+        <Label styleClass="header" text="Пожалуйста авторизуйтесь" BorderPane.alignment="CENTER">
+            <BorderPane.margin>
+                <Insets top="20.0" />
+            </BorderPane.margin>
+        </Label>
+    </top>
+
+   <center>
+      <GridPane BorderPane.alignment="CENTER">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="186.0" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="284.0" minWidth="10.0" prefWidth="284.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="50.0" vgrow="NEVER" />
+          <RowConstraints minHeight="10.0" prefHeight="50.0" vgrow="NEVER" />
+        </rowConstraints>
+         <children>
+            <Label text="Login: " GridPane.halignment="RIGHT" />
+            <Label text="Password:" GridPane.halignment="RIGHT" GridPane.rowIndex="1" />
+            <PasswordField fx:id="passwordField" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <GridPane.margin>
+                  <Insets left="10.0" right="20.0" />
+               </GridPane.margin>
+            </PasswordField>
+            <TextField fx:id="loginField" GridPane.columnIndex="1">
+               <GridPane.margin>
+                  <Insets left="10.0" right="20.0" />
+               </GridPane.margin>
+            </TextField>
+         </children>
+         <BorderPane.margin>
+            <Insets bottom="10.0" top="10.0" />
+         </BorderPane.margin>
+      </GridPane>
+   </center>
+
+   <bottom>
+       <HBox>
+           <Button fx:id="joinButton" mnemonicParsing="false" text="Join" onAction="#sendJoinRequest">
+            <HBox.margin>
+               <Insets left="50.0" />
+            </HBox.margin>
+           </Button>
+           <Region HBox.hgrow="ALWAYS" />
+           <Button fx:id="loginButton" alignment="CENTER" mnemonicParsing="false" onAction="#sendLoginRequest" text="Login">
+            <HBox.margin>
+               <Insets right="20.0" />
+            </HBox.margin>
+           </Button>
+         <BorderPane.margin>
+            <Insets bottom="10.0" />
+         </BorderPane.margin>
+       </HBox>
+   </bottom>
+
+</BorderPane>
